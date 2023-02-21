@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RuntimeIdentifier>linux-musl-x64</RuntimeIdentifier>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>partial</TrimMode>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Condition="'$(IncludeEFCoreSqlServerReference)' == 'true'" Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
+
+    <PackageReference Condition="'$(UseDotNet8Linker)' == 'true'" Include="Microsoft.Net.ILLink.Tasks" Version="8.0.100-1.22612.2" />
+  </ItemGroup>
+
+</Project>
